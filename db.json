@@ -1,0 +1,40 @@
+{
+    "items": [
+      {
+        "name": "A-line gown with voluminous lurex sleeves 851",
+        "image": "/images/18.jpg",
+        "desc":
+          "Shining at any time of the day or night is the fashionable mission of this season. And it will be made with ease by you thanks to the ultra-fashionable A-line dress! The flawless fit, the versatile length just above the knee and the main highlight - the metallic sheen of the long wide sleeves with cuffs at the bottom will make this dress the most favorite thing in your wardrobe.",
+        "price": 110,
+        "id": "001"
+      },
+      {
+        "name": "Premium viscose dress LPL 1044",
+        "image": "/images/18.jpg",
+        "desc": "A premium quality viscose dress LPL 1044 is a must-have in the wardrobe of stylish and confident girls. Stylish lettering pattern will help to make your everyday look memorable and individual.",
+        "price": 150,
+        "id": "002"
+      },
+      {
+        "name": "Premium viscose striped sleeveless dress LPL 1141",
+        "image": "/images/18.jpg",
+        "desc": "With a form-fitting top, a laconic black and white stripe, a delicately assembled A-line skirt, a premium viscose textured canvas, the LPL 1141 model makes it easy to create the most daring office and evening plans.",
+        "price": 200,
+        "id": "003"
+      },
+      {
+        "name": "Premium viscose striped sleeveless dress LPL 1141",
+        "image": "/images/18.jpg",
+        "desc": "With a form-fitting top, a laconic black and white stripe, a delicately assembled A-line skirt, a premium viscose textured canvas, the LPL 1141 model makes it easy to create the most daring office and evening plans.",
+        "price": 200,
+        "id": "004"
+      },
+      {
+        "name": "Premium viscose striped sleeveless dress LPL 1141",
+        "image": "/images/18.jpg",
+        "desc": "With a form-fitting top, a laconic black and white stripe, a delicately assembled A-line skirt, a premium viscose textured canvas, the LPL 1141 model makes it easy to create the most daring office and evening plans.",
+        "price": 200,
+        "id": "005"
+      }
+    ]
+  }
