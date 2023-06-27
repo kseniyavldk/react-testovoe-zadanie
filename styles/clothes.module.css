@@ -20,4 +20,15 @@
   .singleClothes {
     max-width: 600px;
   }
+
+  .btn {
+    display: block;
+    width: 150px;
+    padding: 8px 0;
+    margin: 20px auto 40px;
+    background: #ffc600;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+  }
   
