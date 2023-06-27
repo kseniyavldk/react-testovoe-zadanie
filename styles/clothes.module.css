@@ -1,34 +1,102 @@
-.imageContainer {
-    max-width: 150px;
-  }
-  .clothesCard {
-    color: #2E2E2E;
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    background: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    max-width: 500px;
-    box-shadow: rgba(0, 0, 0, 0.043) 0px 0px 5px 3px;
-  }
-  .clothesCard h3 {
-    margin-top: 0;
-  }
-  .singleClothes {
-    max-width: 600px;
-  }
+@import url('https://fonts.googleapis.com/css?family=Balsamiq+Sans:wght@400;700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext&effect=fire-animation|neon|outline');
 
-  .btn {
-    display: block;
-    width: 150px;
-    padding: 8px 0;
-    margin: 20px auto 40px;
-    background: #ffc600;
-    border-radius: 4px;
-    color: #fff;
-    text-align: center;
-  }
-  
+
+.imageContainer {
+  max-width: 150px;
+}
+
+.clothesCard {
+  color: #2E2E2E;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.043) 0px 0px 5px 3px;
+}
+
+.clothesCard h3 {
+  margin-top: 0;
+}
+
+.singleClothes {
+  max-width: 600px;
+}
+
+.btn {
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 400;
+  display: block;
+  width: 150px;
+  padding: 8px 0;
+  margin: 20px auto 40px;
+  background: #ffc600;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  border: none;
+}
+
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editButton span,
+.deleteButton span {
+  margin-left: 6px;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  background-color: #eaeaea;
+}
+
+.inputContainer {
+  margin-bottom: 1rem;
+}
+
+.inputContainer label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.inputContainer input,
+.inputContainer textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.inputContainer button {
+  background-color: #0070f3;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn {
+  margin-top: 1rem;
+}

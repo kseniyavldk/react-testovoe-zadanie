@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../../styles/clothes.module.css";
+import Link from "next/link";
 
 const AddClothes = () => {
   const [name, setName] = useState("");
@@ -8,27 +9,27 @@ const AddClothes = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newClothes = {
-        name: name,
-        desc: desc
-      };
-  
-      try {
-        const response = await fetch("http://localhost:5000/items", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(newClothes)
-        });
-  
-        if (response.ok) {
-          console.log("New clothes added successfully");
-        } else {
-          console.log("Failed to add new clothes");
-        }
-      } catch (error) {
-        console.error("Error occurred while adding new clothes:", error);
+      name: name,
+      desc: desc,
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/items", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newClothes),
+      });
+
+      if (response.ok) {
+        console.log("New clothes added successfully");
+      } else {
+        console.log("Failed to add new clothes");
       }
+    } catch (error) {
+      console.error("Error occurred while adding new clothes:", error);
+    }
   };
 
   return (
@@ -52,9 +53,14 @@ const AddClothes = () => {
             onChange={(e) => setDesc(e.target.value)}
           />
         </div>
-        <button type="submit" className={styles.btn}>
-          Add
-        </button>
+        <div>
+          <button type="submit" className={styles.btn}>
+            Add
+          </button>
+          <Link href="/clothes">
+            <a className={styles.btn}>Back</a>
+          </Link>
+        </div>
       </form>
     </div>
   );

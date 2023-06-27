@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../../styles/clothes.module.css";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import AddClothesButton from "../../components/AddClothesButton";
+import { useRouter } from "next/router";
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/items");
@@ -14,6 +15,8 @@ export const getStaticProps = async () => {
 };
 
 const ClothesAll = ({ clothes }) => {
+  const router = useRouter();
+
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`http://localhost:5000/items/${id}`, {
@@ -22,6 +25,7 @@ const ClothesAll = ({ clothes }) => {
 
       if (response.ok) {
         console.log("Data deleted successfully");
+        router.replace(router.asPath);
       } else {
         console.log("Failed to delete data");
       }
@@ -36,36 +40,38 @@ const ClothesAll = ({ clothes }) => {
       <AddClothesButton />
       {clothes.map((clothes) => {
         return (
-          <div className={styles.clothesCard} key={clothes.id}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={clothes.image}
-                alt={clothes.name}
-                width={100}
-                height={100}
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div>
-              <h3>{clothes.name}</h3>
-              <p>{clothes.desc}</p>
-            </div>
-            <div>
-              <div>
-                <AiFillDelete onClick={() => handleDelete(clothes.id)} />
+          <Link href={`/clothes/${clothes.id}`} key={clothes.id}>
+            <div className={styles.clothesCard} key={clothes.id}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={clothes.image}
+                  alt={clothes.name}
+                  width={100}
+                  height={100}
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div>
-                <Link href={`/clothes/edit/${clothes.id}`}>
-                  <a>
-                    <AiFillEdit />
-                  </a>
-                </Link>
+                <h3>{clothes.name}</h3>
+                <p>{clothes.desc}</p>
               </div>
+                <div className={styles.buttonContainer}>
+                  <Link href={`/clothes/${clothes.id}`}>
+                    <a className={styles.editButton}>
+                      <AiFillEdit />
+                    </a>
+                  </Link>
+                  <button
+                  className={styles.deleteButton}
+                  onClick={() => handleDelete(clothes.id)}
+                >
+                  <AiFillDelete />
+                </button>
+                </div>
             </div>
-          </div>
+          </Link>
         );
       })}
-      
     </div>
   );
 };
